@@ -14,8 +14,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.android.labmanager.App;
+import com.example.android.labmanager.db.DataBaseRealm;
 import com.example.android.labmanager.model.LabManagerBackup;
 import com.example.android.labmanager.network.google.Backup;
+import com.example.android.labmanager.utilis.SharedPrefStorage;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.drive.Drive;
@@ -59,15 +61,17 @@ public class BackupPresenter {
     private static final int REQUEST_CODE_PICKER_FOLDER = 4;
 
     private static final String TAG = "labmanager_drive_backup";
-    private static final String BACKUP_FOLDER_KEY = "backup_folder";
+    //   private static final String BACKUP_FOLDER_KEY = "backup_folder";
 
     private IntentSender intentPicker;
     private String backupFolder;
 
+
     private GoogleApiClient mGoogleApiClient;
     private Backup backup;
     private Realm realm;
-    private SharedPreferences sharedPref;
+    private SharedPrefStorage sharedPrefStorage;
+    private DataBaseRealm dataBaseRealm;
 
     private App labManagerApp;
     private BackupView backupView;
@@ -75,7 +79,9 @@ public class BackupPresenter {
     private ArrayList<LabManagerBackup> backupsArray = new ArrayList<>();
 
     @Inject
-    public BackupPresenter() {
+    public BackupPresenter(SharedPrefStorage sharedPrefStorage, DataBaseRealm dataBaseRealm) {
+        this.sharedPrefStorage = sharedPrefStorage;
+        this.dataBaseRealm = dataBaseRealm;
     }
 
     public void attachBackupView(BackupView backupView) {
@@ -91,15 +97,14 @@ public class BackupPresenter {
 
 
         labManagerApp = (App) activity.getApplicationContext();
-        sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
-        realm = labManagerApp.getDBHandler().getRealm();
+        realm = dataBaseRealm.getRealm();
         backup = labManagerApp.getBackup();
         backup.init(activity);
         connectClient();
 
         mGoogleApiClient = backup.getClient();
         backup.checkGoogleAvalibility(activity);
-        backupFolder = sharedPref.getString(BACKUP_FOLDER_KEY, "");
+        backupFolder = sharedPrefStorage.readBackupFolder();
         showBackupFolder();
         populateBackupList();
 
@@ -402,9 +407,7 @@ public class BackupPresenter {
 
 
     void saveBackupFolder(String folderPath) {
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(BACKUP_FOLDER_KEY, folderPath);
-        editor.apply();
+        sharedPrefStorage.writeBackupFolder(folderPath);
     }
 
 

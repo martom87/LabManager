@@ -18,10 +18,24 @@ public class SharedPrefStorage {
 
     private static final String PREFS_KEY = "com.example.android.labmanager.sharedPref";
     private static final String PROPERTY_KEY = "property_key";
-
+    private static final String BACKUP_FOLDER_KEY = "backup_folder";
 
     public SharedPrefStorage(Context context) {
         sharedPref = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE);
+    }
+
+
+    public void writeBackupFolder(String folderPath) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(BACKUP_FOLDER_KEY, folderPath);
+        editor.commit();
+
+
+    }
+
+    public String readBackupFolder() {
+        String backupFolder = sharedPref.getString(BACKUP_FOLDER_KEY, "");
+        return backupFolder;
     }
 
     public void writeProperty(Property property) {
@@ -31,6 +45,7 @@ public class SharedPrefStorage {
         editor.commit();
 
     }
+
 
     public Property readProperty() {
         String wrappedProperty = sharedPref.getString(PROPERTY_KEY, null);

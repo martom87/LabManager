@@ -71,10 +71,4 @@ public class App extends Application {
     }
 
 
-    @NonNull
-    public DataBaseRealm getDBHandler() {
-        return new DataBaseRealm(getApplicationContext());
-    }
-
-
 }
