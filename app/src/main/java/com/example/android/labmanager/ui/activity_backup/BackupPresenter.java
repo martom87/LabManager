@@ -66,7 +66,7 @@ public class BackupPresenter {
     private IntentSender intentPicker;
     private String backupFolder;
 
-
+    private Context context;
     private GoogleApiClient mGoogleApiClient;
     private Backup backup;
     private Realm realm;
@@ -79,9 +79,10 @@ public class BackupPresenter {
     private ArrayList<LabManagerBackup> backupsArray = new ArrayList<>();
 
     @Inject
-    public BackupPresenter(SharedPrefStorage sharedPrefStorage, DataBaseRealm dataBaseRealm) {
+    public BackupPresenter(SharedPrefStorage sharedPrefStorage, DataBaseRealm dataBaseRealm, Context context) {
         this.sharedPrefStorage = sharedPrefStorage;
         this.dataBaseRealm = dataBaseRealm;
+        this.context = context;
     }
 
     public void attachBackupView(BackupView backupView) {
@@ -96,7 +97,7 @@ public class BackupPresenter {
     void initialize(Activity activity) {
 
 
-        labManagerApp = (App) activity.getApplicationContext();
+        labManagerApp = (App) context;
         realm = dataBaseRealm.getRealm();
         backup = labManagerApp.getBackup();
         backup.init(activity);

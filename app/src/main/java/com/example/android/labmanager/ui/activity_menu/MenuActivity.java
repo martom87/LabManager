@@ -1,7 +1,6 @@
 package com.example.android.labmanager.ui.activity_menu;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,18 +13,20 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.android.labmanager.R;
-import com.example.android.labmanager.ui.activity_backup.BackupActivity;
-import com.example.android.labmanager.ui.activity_list.CompoundsListActivity;
-import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
-import com.example.android.labmanager.ui.activity_query.QueryActivity;
+import com.example.android.labmanager.db.DataBaseRealm;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected ActionBarDrawerToggle toggle;
+    private Realm realm;
+    IntentFactory intentFactory;
 
 
     @BindView(R.id.toolbar)
@@ -40,14 +41,17 @@ public class MenuActivity extends AppCompatActivity
     @BindView(R.id.textViewToolbar)
     TextView textViewToolbar;
 
+    @Inject
+    DataBaseRealm dataBaseRealm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         ButterKnife.bind(this);
-
         onCreateDrawer();
+        intentFactory = new IntentFactory(this);
 
 
     }
@@ -81,27 +85,19 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_compoundsList) {
-            Intent intent = new Intent(this, CompoundsListActivity.class);
-            startActivity(intent);
-            finish();
+            intentFactory.goToActivity("compoundsListActivity");
         } else if (id == R.id.nav_query) {
-            Intent intent = new Intent(this, QueryActivity.class);
-            startActivity(intent);
-            finish();
+            intentFactory.goToActivity("queryActivity");
+
         } else if (id == R.id.nav_queriedCompoundCard) {
-            Intent intent = new Intent(this, PropertyCardActivity.class);
-            startActivity(intent);
-            finish();
+            intentFactory.goToActivity("propertyCardActivity");
+
         } else if (id == R.id.nav_makeGoogleBackup) {
-            Intent intent = new Intent(this, BackupActivity.class);
-            startActivity(intent);
-            finish();
+            intentFactory.goToActivity("backupActivity");
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 
 
 }
