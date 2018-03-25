@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.db.DataBaseRealm;
+import com.example.android.labmanager.ui.factories.IntentFactory;
+import com.example.android.labmanager.ui.factories.SimpleDialogFactory;
 
 import javax.inject.Inject;
 
@@ -93,12 +95,21 @@ public class MenuActivity extends AppCompatActivity
             intentFactory.goToActivity("propertyCardActivity");
 
         } else if (id == R.id.nav_makeGoogleBackup) {
-            intentFactory.goToActivity("backupActivity");
+            askIfMakeEmptyBackup();
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
+    void askIfMakeEmptyBackup() {
+        if (dataBaseRealm.getRealm().isEmpty()) {
+            SimpleDialogFactory simpleDialogFactory = new SimpleDialogFactory(this, null, null, 0);
+            simpleDialogFactory.makeDialog("askIfMakeEmptyBackup");
+
+        } else
+            intentFactory.goToActivity("backupActivity");
+
+    }
 
 }
 

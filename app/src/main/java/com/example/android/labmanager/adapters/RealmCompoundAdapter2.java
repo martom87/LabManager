@@ -1,18 +1,17 @@
 package com.example.android.labmanager.adapters;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.db.DataBaseRealm;
 import com.example.android.labmanager.model.Property;
+import com.example.android.labmanager.ui.factories.SimpleDialogFactory;
 
 
 import javax.inject.Inject;
@@ -31,7 +30,7 @@ import io.realm.RealmRecyclerViewAdapter;
 public class RealmCompoundAdapter2 extends RealmRecyclerViewAdapter<Property, RealmCompoundAdapter2.CompoundHolder2> {
 
     public DataBaseRealm dataBaseRealm;
-    public Context context;
+    private Context context;
 
 
     @Inject
@@ -39,12 +38,14 @@ public class RealmCompoundAdapter2 extends RealmRecyclerViewAdapter<Property, Re
         super(propertyRealmResults, autoUpdate);
         this.dataBaseRealm = dataBaseRealm;
 
+
     }
 
 
     @Override
     public CompoundHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
+
         return new RealmCompoundAdapter2.CompoundHolder2(LayoutInflater.from(context)
                 .inflate(R.layout.item_compound_adapter2, parent, false));
     }
@@ -61,7 +62,11 @@ public class RealmCompoundAdapter2 extends RealmRecyclerViewAdapter<Property, Re
 
     class CompoundHolder2 extends RecyclerView.ViewHolder {
 
-        Property deleteProperty;
+
+        public Property deleteProperty;
+        
+
+
         @BindView(R.id.name)
         TextView name;
 
@@ -74,20 +79,8 @@ public class RealmCompoundAdapter2 extends RealmRecyclerViewAdapter<Property, Re
 
         @OnClick(R.id.button2)
         public void onClick() {
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage(R.string.makeSureToRemoveCmp).setTitle("Delete");
-            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dataBaseRealm.deleteCompoundsFromDb(Integer.valueOf(deleteProperty.getCID()));
-                    Toast.makeText(context, R.string.deletedCompound, Toast.LENGTH_SHORT).show();
-                }
-            });
-            builder.setNegativeButton("No", null);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-
-
+            SimpleDialogFactory simpleDialogFactory = new SimpleDialogFactory(context, null, dataBaseRealm, deleteProperty.getCID());
+            simpleDialogFactory.makeDialog("askIfRemoveCompound");
         }
 
 

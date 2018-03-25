@@ -130,7 +130,7 @@ public class PropertyCardPresenter {
 
     }
 
-    void saveCompoundToDb() {
+    public void saveCompoundToDb() {
         dataBaseRealm.saveCompoundsDataToDb(property);
     }
 

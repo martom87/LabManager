@@ -1,7 +1,6 @@
-package com.example.android.labmanager.ui.activity_menu;
+package com.example.android.labmanager.ui.factories;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 
 import com.example.android.labmanager.ui.activity_backup.BackupActivity;
@@ -16,9 +15,9 @@ import com.example.android.labmanager.ui.activity_query.QueryActivity;
 public class IntentFactory {
 
 
-    Intent intent;
-    Activity activity;
-   // private Context context;
+    private Intent intent;
+    private Activity activity;
+
 
     public IntentFactory(Activity activity) {
         this.activity = activity;

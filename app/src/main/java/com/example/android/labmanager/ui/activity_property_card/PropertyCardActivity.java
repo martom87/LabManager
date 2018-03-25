@@ -1,13 +1,10 @@
 package com.example.android.labmanager.ui.activity_property_card;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +15,9 @@ import android.widget.Toast;
 
 import com.example.android.labmanager.App;
 import com.example.android.labmanager.R;
-import com.example.android.labmanager.ui.activity_list.CompoundsListActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
+import com.example.android.labmanager.ui.factories.SimpleDialogFactory;
 import com.example.android.labmanager.ui.activity_query.QueryActivity;
 import com.squareup.picasso.Picasso;
 
@@ -138,19 +135,8 @@ public class PropertyCardActivity extends MenuActivity implements PropertyCardVi
 
     @Override
     public void askIfOverrideCompound() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.compoundWasSaved).setTitle("Overwrite");
-        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                propertyCardPresenter.saveCompoundToDb();
-                Toast.makeText(getApplicationContext(), R.string.compoundEdit, Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        builder.setNegativeButton("no", null);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        SimpleDialogFactory simpleDialogFactory = new SimpleDialogFactory(this, propertyCardPresenter, null, 0);
+        simpleDialogFactory.makeDialog("askToOverrideCompound");
     }
 
     @Override
