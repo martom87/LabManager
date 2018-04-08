@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -61,7 +60,7 @@ public class BackupPresenter {
     private static final int REQUEST_CODE_PICKER_FOLDER = 4;
 
     private static final String TAG = "labmanager_drive_backup";
-    //   private static final String BACKUP_FOLDER_KEY = "backup_folder";
+
 
     private IntentSender intentPicker;
     private String backupFolder;
@@ -77,6 +76,7 @@ public class BackupPresenter {
     private BackupView backupView;
     String title;
     private ArrayList<LabManagerBackup> backupsArray = new ArrayList<>();
+
 
     @Inject
     public BackupPresenter(SharedPrefStorage sharedPrefStorage, DataBaseRealm dataBaseRealm, Context context) {
@@ -153,9 +153,12 @@ public class BackupPresenter {
     }
 
     void openFolderPicker(boolean uploadToDrive, Activity activity) {
+
         if (uploadToDrive) {
             // checks if a backup folder is set
+
             if (TextUtils.isEmpty(backupFolder)) {
+
                 try {
                     if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
                         if (intentPicker == null)
@@ -171,9 +174,12 @@ public class BackupPresenter {
                     backupView.showErrorDialog();
 
                 }
+
             } else {
                 uploadToDrive(DriveId.decodeFromString(backupFolder), activity);
             }
+
+
         } else {
             try {
                 intentPicker = null;
@@ -359,13 +365,13 @@ public class BackupPresenter {
                                                     if (!result.getStatus().isSuccess()) {
                                                         Log.d(TAG, "Error while trying to create the file");
                                                         backupView.showErrorDialog();
-                                                        activity.finish();
                                                         return;
                                                     }
 
-                                                    activity.finish();
-                                                    rebootTheApplication();
                                                     backupView.showSuccessDialog();
+
+                                                    activity.recreate();
+
                                                 }
                                             });
                                 }

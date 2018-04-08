@@ -36,6 +36,7 @@ import butterknife.Optional;
 public class BackupActivity extends MenuActivity implements BackupView, MenuDrawer {
 
 
+
     @Optional
     @OnClick(R.id.activity_backup_drive_button_backup)
     public void onClick() {
@@ -48,6 +49,13 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
     public void onClick2() {
 
         backupPresenter.openOnDrive(DriveId.decodeFromString(backupPresenter.getBackupFolder()), this);
+    }
+
+    @Optional
+    @OnClick(R.id.activity_backup_change_user)
+    public void onClick3(){
+        backupPresenter.disconnectClient();
+        recreate();
     }
 
     @BindView(R.id.textViewToolbar)
@@ -64,7 +72,7 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
     @Optional
     @OnClick(R.id.activity_backup_drive_button_folder)
 
-    public void onClick3() {
+    public void onClick4() {
         if (!"".equals(backupPresenter.getBackupFolder())) {
 
 
@@ -101,7 +109,6 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
     protected void onDestroy() {
         Log.e("STATE", "OnDestroy");
         backupPresenter.detachBackupView();
-        backupPresenter.disconnectClient();
         super.onDestroy();
     }
 
