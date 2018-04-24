@@ -33,12 +33,16 @@
             android:name=".ui.activity_list.CompoundsListActivity"
             android:label="List"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ui.activity_backup.BackupActivity"
             android:label="Backup"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".ui.activity_settings.SettingsActivity">
+            android:label="Settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        </activity>
     </application>
 
 </manifest>

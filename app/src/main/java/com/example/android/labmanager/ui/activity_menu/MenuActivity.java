@@ -96,6 +96,8 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_makeGoogleBackup) {
             askIfMakeEmptyBackup();
+        }else if (id == R.id.nav_settings ){
+            intentFactory.goToActivity("settingsActivity");
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -108,6 +110,7 @@ public class MenuActivity extends AppCompatActivity
 
         } else
             intentFactory.goToActivity("backupActivity");
+
 
     }
 

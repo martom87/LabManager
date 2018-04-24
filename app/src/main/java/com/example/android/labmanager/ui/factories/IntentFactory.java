@@ -7,6 +7,7 @@ import com.example.android.labmanager.ui.activity_backup.BackupActivity;
 import com.example.android.labmanager.ui.activity_list.CompoundsListActivity;
 import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
 import com.example.android.labmanager.ui.activity_query.QueryActivity;
+import com.example.android.labmanager.ui.activity_settings.SettingsActivity;
 
 /**
  * Created by marcinek on 24.03.2018.
@@ -33,6 +34,9 @@ public class IntentFactory {
             intent = new Intent(activity, CompoundsListActivity.class);
         } else if (activityName.equals("backupActivity")) {
             intent = new Intent(activity, BackupActivity.class);
+        }else if (activityName.equals("settingsActivity")) {
+            intent = new Intent(activity, SettingsActivity.class);
+
         }
         activity.startActivity(intent);
         activity.finish();

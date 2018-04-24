@@ -102,7 +102,6 @@ dependencies {
     // Google Drive
     compile 'com.google.android.gms:play-services:11.8.0'
 
-
 //ScrollView
     compile 'com.github.paolorotolo:expandableheightlistview:1.0.0'
 

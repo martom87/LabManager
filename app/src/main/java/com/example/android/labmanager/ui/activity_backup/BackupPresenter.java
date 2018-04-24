@@ -372,6 +372,7 @@ public class BackupPresenter {
 
                                                     activity.recreate();
 
+
                                                 }
                                             });
                                 }
