@@ -2,18 +2,19 @@ package com.example.android.labmanager.ui.activity_settings;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.android.labmanager.App;
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
-import com.example.android.labmanager.ui.activity_settings.change_account_fragment.ChangeAccountFragment;
 
 import javax.annotation.Nullable;
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,14 +23,22 @@ import butterknife.Optional;
 
 public class SettingsActivity extends MenuActivity implements MenuDrawer {
 
+    @Inject
+    SettingsPresenter settingsPresenter;
+
     @BindView(R.id.textViewToolbar)
     TextView textViewToolbar;
 
+    @Nullable
+    @BindView(R.id.changeAccount)
+    Button changeAccount;
+
     @Optional
-    @OnClick(R.id.goToChangeLanguage)
+    @OnClick(R.id.changeAccount)
 
     public void OnClick() {
-        openChangeAccountFragment();
+        settingsPresenter.disconnectClient();
+        recreate();
     }
 
     @Override
@@ -37,15 +46,16 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
         super.onCreate(savedInstanceState);
         invokeMenuDrawer();
         ButterKnife.bind(this);
+        ((App) getApplication()).getAppComponent().inject(this);
         setTitle();
+        settingsPresenter.initialize(this);
     }
 
-    private void openChangeAccountFragment() {
+    @Override
+    protected void onDestroy() {
+        Log.e("STATE", "OnDestroy");
+        super.onDestroy();
 
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.my_placeholder, new ChangeAccountFragment());
-
-        fragmentTransaction.commit();
     }
 
 
@@ -62,4 +72,6 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
     public void setTitle() {
         textViewToolbar.setText("Settings");
     }
+
+
 }

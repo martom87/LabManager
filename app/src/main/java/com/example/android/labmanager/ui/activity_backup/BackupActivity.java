@@ -18,6 +18,7 @@ import com.example.android.labmanager.adapters.BackupAdapter;
 import com.example.android.labmanager.model.LabManagerBackup;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
+import com.example.android.labmanager.ui.factories.IntentFactory;
 import com.github.paolorotolo.expandableheightlistview.ExpandableHeightListView;
 import com.google.android.gms.drive.DriveFile;
 import com.google.android.gms.drive.DriveId;
@@ -35,7 +36,7 @@ import butterknife.Optional;
 
 public class BackupActivity extends MenuActivity implements BackupView, MenuDrawer {
 
-
+    IntentFactory intentFactory;
 
     @Optional
     @OnClick(R.id.activity_backup_drive_button_backup)
@@ -51,12 +52,6 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
         backupPresenter.openOnDrive(DriveId.decodeFromString(backupPresenter.getBackupFolder()), this);
     }
 
-    @Optional
-    @OnClick(R.id.activity_backup_change_user)
-    public void onClick3(){
-        backupPresenter.disconnectClient();
-        recreate();
-    }
 
     @BindView(R.id.textViewToolbar)
     TextView textViewToolbar;
@@ -95,14 +90,10 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
         ButterKnife.bind(this);
         ((App) getApplication()).getAppComponent().inject(this);
         setTitle();
-
         backupPresenter.attachBackupView(this);
         backupPresenter.initialize(this);
-
-
         makeBackUpListViewExpandalbe();
-
-
+        intentFactory = new IntentFactory(this);
     }
 
     @Override
@@ -138,9 +129,7 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
 
     @Override
     public void setManageButtonVisible() {
-
         manageButton.setVisibility(View.VISIBLE);
-
     }
 
     @Override
@@ -217,14 +206,17 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
 
                     backupPresenter.saveBackupFolder(mFolderDriveId.encodeToString());
                     // Restart activity to apply changes
-                    Intent intent = getIntent();
-                    finish();
-                    startActivity(intent);
+                    intentFactory.goToActivity("restart");
+
                 }
                 break;
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        intentFactory.goToActivity("queryActivity");
+    }
 
 }
 

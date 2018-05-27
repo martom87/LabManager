@@ -17,6 +17,7 @@ import com.example.android.labmanager.App;
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
+import com.example.android.labmanager.ui.factories.IntentFactory;
 import com.example.android.labmanager.ui.factories.SimpleDialogFactory;
 import com.example.android.labmanager.ui.activity_query.QueryActivity;
 import com.squareup.picasso.Picasso;
@@ -37,6 +38,8 @@ import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
  */
 
 public class PropertyCardActivity extends MenuActivity implements PropertyCardView, MenuDrawer {
+
+    IntentFactory intentFactory;
 
     @Nullable
     @BindView(R.id.textViewCompoundsName)
@@ -81,6 +84,7 @@ public class PropertyCardActivity extends MenuActivity implements PropertyCardVi
         ButterKnife.bind(this);
         ((App) getApplication()).getAppComponent().inject(this);
         setTitle();
+        intentFactory = new IntentFactory(this);
         propertyCardPresenter.attachPropertyCardView(this);
         propertyCardPresenter.showCompound();
     }
@@ -151,11 +155,7 @@ public class PropertyCardActivity extends MenuActivity implements PropertyCardVi
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, QueryActivity.class);
-        startActivity(intent);
-        finish();
-
+        intentFactory.goToActivity("queryActivity");
     }
-
 
 }

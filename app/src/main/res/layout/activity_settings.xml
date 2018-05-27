@@ -3,38 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-    <Button
-        android:id="@+id/goToChangeLanguage"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@id/typeCidNumber"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/buttons"
-        android:text="Change Account" />
-
     <Button
         android:id="@+id/changeAccount"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_below="@id/goToChangeLanguage"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/buttons"
-        android:text="Download Compound Data" />
+        android:background="@null"
+        android:gravity="left|center_vertical"
+        android:text="Change account" />
 
     <FrameLayout
         android:id="@+id/my_placeholder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
-
-
-
-
-
-
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"></FrameLayout>
 
 </RelativeLayout>

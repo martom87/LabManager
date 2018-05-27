@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -94,7 +95,7 @@ public class BackupPresenter {
     }
 
 
-    void initialize(Activity activity) {
+    public void initialize(Activity activity) {
 
 
         labManagerApp = (App) context;
@@ -113,7 +114,7 @@ public class BackupPresenter {
 
 
     void showBackupFolder() {
-        if (!("").equals(backupFolder)) {
+        if (!("").equals(backupFolder) && !(backupView == null)) {
             setBackupFolderTitle(DriveId.decodeFromString(backupFolder));
             backupView.setManageButtonVisible();
         }
@@ -229,8 +230,9 @@ public class BackupPresenter {
                             long backupSize = metadata.getFileSize();
                             backupsArray.add(new LabManagerBackup(driveId, modifiedDate, backupSize));
                         }
-
-                        backupView.setBackupAdapter();
+                        if (!(backupView == null)) {
+                            backupView.setBackupAdapter();
+                        }
                     }
                 });
     }

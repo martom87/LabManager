@@ -70,7 +70,7 @@
                 android:id="@+id/saveDataToRealm"
                 android:layout_width="100dp"
                 android:layout_height="55dp"
-                android:background="@drawable/buttons"
+                android:background="@null"
                 android:layout_alignRight="@id/textViewCompoundsName"
                 android:layout_below="@id/textViewCompoundsName"
                 android:text="Save/Override" />

@@ -17,6 +17,7 @@ import com.example.android.labmanager.R;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
 import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
+import com.example.android.labmanager.ui.factories.IntentFactory;
 
 import javax.inject.Inject;
 
@@ -30,6 +31,9 @@ import butterknife.Optional;
  */
 
 public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer {
+
+
+    IntentFactory intentFactory;
 
     @Nullable
     @BindView(R.id.typeCidNumber)
@@ -63,6 +67,7 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
         ((App) getApplication()).getAppComponent().inject(this);
         setTitle();
         queryPresenter.attachQueryView(this);
+        intentFactory = new IntentFactory(this);
 
 
     }
@@ -97,16 +102,11 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
 
     @Override
     public void goToCompoundsCardActivity() {
-
-        Intent intent = new Intent(this, PropertyCardActivity.class);
-        startActivity(intent);
-        finish();
-
+        intentFactory.goToActivity("propertyCardActivity");
     }
 
     void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
-
     }
 
 

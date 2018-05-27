@@ -19,6 +19,7 @@ import com.example.android.labmanager.adapters.RecyclerItemClickListener;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
 import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
+import com.example.android.labmanager.ui.factories.IntentFactory;
 
 import javax.inject.Inject;
 
@@ -35,6 +36,7 @@ public class CompoundsListActivity extends MenuActivity implements CompoundsList
 
     boolean touchOn;
     RecyclerItemClickListener recyclerItemClickListener;
+    IntentFactory intentFactory;
 
     @Nullable
     @BindView(R.id.compounds_recycler)
@@ -76,6 +78,7 @@ public class CompoundsListActivity extends MenuActivity implements CompoundsList
         setTitle();
         compoundsListPresenter.attachListView(this);
         compoundsListPresenter.displayCompoundsList();
+        intentFactory = new IntentFactory(this);
     }
 
     @Override
@@ -122,10 +125,7 @@ public class CompoundsListActivity extends MenuActivity implements CompoundsList
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, PropertyCardActivity.class);
-        startActivity(intent);
-        finish();
-
+        intentFactory.goToActivity("propertyCardActivity");
     }
 
 

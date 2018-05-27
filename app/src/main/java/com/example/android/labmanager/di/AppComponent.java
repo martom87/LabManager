@@ -4,6 +4,7 @@ import com.example.android.labmanager.ui.activity_backup.BackupActivity;
 import com.example.android.labmanager.ui.activity_list.CompoundsListActivity;
 import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
 import com.example.android.labmanager.ui.activity_query.QueryActivity;
+import com.example.android.labmanager.ui.activity_settings.SettingsActivity;
 
 import javax.inject.Singleton;
 
@@ -22,6 +23,8 @@ public interface AppComponent {
     void inject(CompoundsListActivity compoundsListActivity);
 
     void inject(BackupActivity backupActivity2);
+
+    void inject(SettingsActivity settingsActivity);
 
 
 

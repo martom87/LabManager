@@ -27,7 +27,7 @@ public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected ActionBarDrawerToggle toggle;
-    private Realm realm;
+    //private Realm realm;
     IntentFactory intentFactory;
 
 
@@ -70,7 +70,6 @@ public class MenuActivity extends AppCompatActivity
 
     }
 
-
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -96,12 +95,13 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_makeGoogleBackup) {
             askIfMakeEmptyBackup();
-        }else if (id == R.id.nav_settings ){
+        } else if (id == R.id.nav_settings) {
             intentFactory.goToActivity("settingsActivity");
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
     void askIfMakeEmptyBackup() {
         if (dataBaseRealm.getRealm().isEmpty()) {

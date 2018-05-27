@@ -34,9 +34,10 @@ public class IntentFactory {
             intent = new Intent(activity, CompoundsListActivity.class);
         } else if (activityName.equals("backupActivity")) {
             intent = new Intent(activity, BackupActivity.class);
-        }else if (activityName.equals("settingsActivity")) {
+        } else if (activityName.equals("settingsActivity")) {
             intent = new Intent(activity, SettingsActivity.class);
-
+        } else if (activityName.equals("restart")) {
+            intent = activity.getIntent();
         }
         activity.startActivity(intent);
         activity.finish();
