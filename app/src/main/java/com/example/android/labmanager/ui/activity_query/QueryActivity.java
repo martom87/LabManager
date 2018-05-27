@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
 import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
 import com.example.android.labmanager.ui.factories.IntentFactory;
+import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
 
@@ -25,6 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Optional;
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 /**
  * Created by Admin on 2017-07-20.
@@ -41,6 +44,10 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
 
     @BindView(R.id.textViewToolbar)
     TextView textViewToolbar;
+
+    @Nullable
+    @BindView(R.id.imageViewFlask)
+    ImageView erlenmayerFlask;
 
     @Nullable
     @BindView(R.id.cmpdsDataLoader_progress_bar)
@@ -68,7 +75,7 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
         setTitle();
         queryPresenter.attachQueryView(this);
         intentFactory = new IntentFactory(this);
-
+        showFlask();
 
     }
 
@@ -107,6 +114,12 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
 
     void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
+    }
+
+    void showFlask() {
+        Picasso.with(getApplicationContext()).load(R.drawable.erlenmayer)
+                .transform(new RoundedCornersTransformation(100, 5))
+                .fit().into(erlenmayerFlask);
     }
 
 

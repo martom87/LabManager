@@ -12,6 +12,7 @@ import com.example.android.labmanager.App;
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
+import com.example.android.labmanager.ui.factories.IntentFactory;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;
@@ -22,6 +23,8 @@ import butterknife.OnClick;
 import butterknife.Optional;
 
 public class SettingsActivity extends MenuActivity implements MenuDrawer {
+
+    IntentFactory intentFactory;
 
     @Inject
     SettingsPresenter settingsPresenter;
@@ -49,6 +52,7 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
         ((App) getApplication()).getAppComponent().inject(this);
         setTitle();
         settingsPresenter.initialize(this);
+        intentFactory = new IntentFactory(this);
     }
 
     @Override
@@ -73,5 +77,9 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
         textViewToolbar.setText("Settings");
     }
 
+    @Override
+    public void onBackPressed() {
+        intentFactory.goToActivity("queryActivity");
+    }
 
 }
