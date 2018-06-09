@@ -428,12 +428,11 @@ public class BackupPresenter {
         backup.stop();
     }
 
-    boolean isClientConnected() {
+   public boolean isClientConnected() {
         if (mGoogleApiClient.isConnected()) {
             return true;
-        } else
-            return false;
-    }
-
+        }
+       return false;
+   }
 
 }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.labmanager.App;
 import com.example.android.labmanager.R;
@@ -22,7 +23,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Optional;
 
-public class SettingsActivity extends MenuActivity implements MenuDrawer {
+
+ public class SettingsActivity extends MenuActivity implements MenuDrawer, SettingsView {
 
     IntentFactory intentFactory;
 
@@ -41,7 +43,9 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
 
     public void OnClick() {
         settingsPresenter.disconnectClient();
+      //  showAccountWasChanged();
         recreate();
+
     }
 
     @Override
@@ -51,6 +55,7 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
         ButterKnife.bind(this);
         ((App) getApplication()).getAppComponent().inject(this);
         setTitle();
+        settingsPresenter.attachSettingsView(this);
         settingsPresenter.initialize(this);
         intentFactory = new IntentFactory(this);
     }
@@ -59,6 +64,7 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
     protected void onDestroy() {
         Log.e("STATE", "OnDestroy");
         super.onDestroy();
+        settingsPresenter.detachSettingsView();
 
     }
 
@@ -80,6 +86,12 @@ public class SettingsActivity extends MenuActivity implements MenuDrawer {
     @Override
     public void onBackPressed() {
         intentFactory.goToActivity("queryActivity");
+
+
     }
 
+    @Override
+    public void showAccountWasChanged() {
+        Toast.makeText(getApplicationContext(), "Please choose the account", Toast.LENGTH_SHORT).show();
+    }
 }
