@@ -25,7 +25,7 @@
         android:drawableLeft="@drawable/ic_search_glass_24dp"
         android:ellipsize="start"
         android:gravity="center"
-        android:hint="Type CID Number"
+        android:hint="@string/activity_query_hint_typeCid"
         android:inputType="text" />
 
     <Button
@@ -36,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="45dp"
         android:background="@drawable/buttons"
-        android:text="Download Compound Data" />
+        android:text="@string/activity_query_button_dataDownload" />
 
     <ProgressBar
         android:id="@+id/cmpdsDataLoader_progress_bar"

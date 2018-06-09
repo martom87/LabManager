@@ -4,19 +4,35 @@
     <string name="app_name">LabManager</string>
     <string name="errorMessage">Cid Number must be an integer bigger than 0</string>
     <string name="InternetConnectionFailure">WIFI Unavailable</string>
+    <string name="activity_query_hint_typeCid">Type CID Number</string>
+    <string name="activity_query_button_dataDownload">Download Compound Data</string>
+    <string name="title_activity_query">Query</string>
 
     <!--compounds_card_activity-->
+    <string name="title_activity_compounds_card">Compound Card</string>
     <string name="compoundWasSaved">"The compound was once saved. Do you want to overwrite?"</string>
     <string name="compoundEdit">"The Compound was overwritten"</string>
     <string name="infoCompoundWasSaved">The Compound was Save to List ! </string>
     <string name="neverQueriedCompound">You haven`t downloaded any compound yet ! </string>
     <string name="noCompoundToDisplay">No data to display. </string>
+    <string name="activity_property_card_view_compound_name">Compound Name </string>
+    <string name="activity_property_card_view_compound_formula">Compound Formula </string>
+    <string name="activity_property_card_view_compound_mass">Compound Mass </string>
+    <string name="activity_property_card_view_compound_cid">Compound Cid </string>
+    <string name="activity_property_button_save_override">Save/Override </string>
+    <string name="activity_property_hint_add_storage">Add Storage Place </string>
+    <string name="activity_property_no_data_display">No data was Downloaded </string>
+    <string name="activity_property_no_mass_unit">[g/mol] </string>
+    <string name="activity_property_no_storage">No Storage Added </string>
 
     <!--compounds_list_activity-->
+    <string name="title_activity_compounds_list">Compounds List</string>
     <string name="infoCompoundIsIn">The compound is in </string>
     <string name="infoNoCompound">You have not got this compound</string>
     <string name="makeSureToRemoveCmp">"Do you really want to delete this compound?" </string>
     <string name="deletedCompound">"The compound was removed" </string>
+    <string name="activity_list_button_checkAvailability">Check Availability</string>
+    <string name="activity_list_button_listReload">Reload List</string>
 
     <!--menu_activity-->
     <string name="title_activity_menu">MenuActivity</string>
@@ -34,6 +50,13 @@
     <string name="activity_backup_drive_folder_not_set">Not set</string>
     <string name="activity_backup_drive_button_open_drive">Manage Your Drive</string>
     <string name="activity_backup_drive_recent">Your Recent backups:</string>
+    <string name="activity_backup_success">Success:</string>
+    <string name="activity_backup_failure">Success:</string>
+
+    <!--settings_activity-->
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="activity_settings_select_account">Please choose the account</string>
+    <string name="activity_settings_change_account_button">Change Account</string>
 
     <!--dialog_backup_restore-->
     <string name="activity_backup_drive_dialog_restore_title">Revert to previous version</string>

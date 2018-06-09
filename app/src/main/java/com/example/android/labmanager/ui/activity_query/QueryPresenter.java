@@ -40,7 +40,8 @@ public class QueryPresenter {
 
 
     public void setCidInput(String cidValue) {
-        if (cidValue.isEmpty() || (!cidValue.matches("-?\\d+(\\.\\d+)?")) || cidValue.matches("[^123456789]+")) {
+        if (cidValue.isEmpty() || (!cidValue.matches("-?\\d+(\\.\\d+)?"))
+                || cidValue.matches("[^123456789]+")) {
 
             queryView.showErrorMessage(R.string.errorMessage);
         } else {
@@ -100,7 +101,6 @@ public class QueryPresenter {
             }
         });
     }
-
 
 
 }

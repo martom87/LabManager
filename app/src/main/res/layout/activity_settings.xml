@@ -12,7 +12,7 @@
         android:layout_marginRight="16dp"
         android:background="@null"
         android:gravity="left|center_vertical"
-        android:text="Change account" />
+        android:text= "@string/activity_settings_change_account_button" />
 
     <FrameLayout
         android:id="@+id/my_placeholder"

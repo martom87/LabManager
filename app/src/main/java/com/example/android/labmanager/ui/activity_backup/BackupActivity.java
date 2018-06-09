@@ -113,18 +113,18 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
 
     @Override
     public void setTitle() {
-        textViewToolbar.setText("Backup");
+        textViewToolbar.setText(R.string.title_activity_backup);
     }
 
 
     @Override
     public void showSuccessDialog() {
-        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), R.string.activity_backup_success, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showErrorDialog() {
-        Toast.makeText(getApplicationContext(), "Failure, Please select BackupFolder", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), R.string.activity_backup_failure, Toast.LENGTH_SHORT).show();
     }
 
     @Override

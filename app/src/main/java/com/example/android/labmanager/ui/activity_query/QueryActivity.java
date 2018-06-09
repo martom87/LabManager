@@ -91,7 +91,7 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
 
     @Override
     public void setTitle() {
-        textViewToolbar.setText("Query");
+        textViewToolbar.setText(R.string.title_activity_query);
     }
 
 

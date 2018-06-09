@@ -43,7 +43,6 @@ import butterknife.Optional;
 
     public void OnClick() {
         settingsPresenter.disconnectClient();
-      //  showAccountWasChanged();
         recreate();
 
     }
@@ -80,7 +79,7 @@ import butterknife.Optional;
 
     @Override
     public void setTitle() {
-        textViewToolbar.setText("Settings");
+        textViewToolbar.setText(R.string.title_activity_settings);
     }
 
     @Override
@@ -92,6 +91,6 @@ import butterknife.Optional;
 
     @Override
     public void showAccountWasChanged() {
-        Toast.makeText(getApplicationContext(), "Please choose the account", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), R.string.activity_settings_select_account, Toast.LENGTH_SHORT).show();
     }
 }

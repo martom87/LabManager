@@ -91,7 +91,7 @@ public class CompoundsListActivity extends MenuActivity implements CompoundsList
 
     @Override
     public void setTitle() {
-        textViewToolbar.setText("Compounds List");
+        textViewToolbar.setText(R.string.title_activity_compounds_list);
     }
 
 

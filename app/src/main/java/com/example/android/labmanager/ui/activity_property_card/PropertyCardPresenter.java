@@ -1,12 +1,13 @@
 package com.example.android.labmanager.ui.activity_property_card;
 
 
+import android.content.Context;
+
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.db.DataBaseRealm;
 import com.example.android.labmanager.model.Property;
 import com.example.android.labmanager.network.pubChem.PubChemClient;
 import com.example.android.labmanager.utilis.SharedPrefStorage;
-
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,14 +27,15 @@ public class PropertyCardPresenter {
     private DataBaseRealm dataBaseRealm;
     private PubChemClient pubChemClient;
     private boolean propertyIsEmpty;
-
+    private Context context;
 
     @Inject
 
-    public PropertyCardPresenter(SharedPrefStorage sharedPrefStorage, DataBaseRealm dataBaseRealm, PubChemClient pubChemClient) {
+    public PropertyCardPresenter(SharedPrefStorage sharedPrefStorage, DataBaseRealm dataBaseRealm, PubChemClient pubChemClient, Context context) {
         this.sharedPrefStorage = sharedPrefStorage;
         this.dataBaseRealm = dataBaseRealm;
         this.pubChemClient = pubChemClient;
+        this.context = context;
     }
 
 
@@ -49,14 +51,15 @@ public class PropertyCardPresenter {
     List<String> writeCompoundData() {
         String name = property.getIUPACName();
         String formula = property.getMolecularFormula();
-        String mass = (String.valueOf((property.getMolecularWeight()) + "[g/mol]"));
+        String massUnit = context.getResources().getString(R.string.activity_property_no_mass_unit);
+        String mass = (String.valueOf((property.getMolecularWeight()) + massUnit));
         String cID = String.valueOf(property.getCID());
         List<String> compoundsData = Arrays.asList(name, formula, mass, cID);
         return compoundsData;
     }
 
     List<String> writeDefaultCompoundData() {
-        String name = "No data to Download";
+        String name = context.getResources().getString(R.string.activity_property_no_data_display);
         String formula = name;
         String mass = name;
         String cID = name;
@@ -122,7 +125,8 @@ public class PropertyCardPresenter {
     void setCompoundStore(String store) {
 
         if (store.isEmpty()) {
-            property.setStore("No Storage Added");
+            store = context.getResources().getString(R.string.activity_property_no_storage);
+            property.setStore(store);
         } else {
             property.setStore(store);
         }

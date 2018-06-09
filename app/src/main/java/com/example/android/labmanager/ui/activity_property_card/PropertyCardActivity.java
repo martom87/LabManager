@@ -99,7 +99,7 @@ public class PropertyCardActivity extends MenuActivity implements PropertyCardVi
 
     @Override
     public void setTitle() {
-        textViewToolbar.setText("Compound Card");
+        textViewToolbar.setText(R.string.title_activity_compounds_card);
     }
 
     @Override

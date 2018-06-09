@@ -92,7 +92,8 @@ public class CompoundsListPresenter {
 
     public void checkCompoundIsStored(String queriedCid) {
 
-        if (queriedCid.isEmpty() || (!queriedCid.matches("-?\\d+(\\.\\d+)?")) || queriedCid.matches("[^123456789]+")) {
+        if (queriedCid.isEmpty() || (!queriedCid.matches("-?\\d+(\\.\\d+)?"))
+                || queriedCid.matches("[^123456789]+")) {
             compoundsListView.showErrorMessage(R.string.errorMessage);
         } else {
 

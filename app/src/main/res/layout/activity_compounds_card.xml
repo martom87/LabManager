@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:paddingTop="20dp"
-                android:text="CompoundName"
+                android:text="@string/activity_property_card_view_compound_name"
                 android:textColor="#307be1"
                 android:textSize="16sp" />
 
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewCompoundsName"
                 android:layout_marginTop="8dp"
-                android:text="CompoundCid"
+                android:text="@string/activity_property_card_view_compound_formula"
                 android:textColor="#333"
                 android:textSize="14sp" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewCompoundsFormula"
                 android:layout_marginTop="8dp"
-                android:text="CompoundStore"
+                android:text="@string/activity_property_card_view_compound_mass"
                 android:textColor="#333"
                 android:textSize="14sp" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewCompoundsMass"
                 android:layout_marginTop="8dp"
-                android:text="CompoundCid"
+                android:text="@string/activity_property_card_view_compound_cid"
                 android:textColor="#333"
                 android:textSize="14sp" />
 
@@ -73,7 +73,7 @@
                 android:background="@null"
                 android:layout_alignRight="@id/textViewCompoundsName"
                 android:layout_below="@id/textViewCompoundsName"
-                android:text="Save/Override" />
+                android:text="@string/activity_property_button_save_override" />
 
         </RelativeLayout>
 
@@ -93,7 +93,7 @@
         android:background="@drawable/edit_texts"
         android:ellipsize="start"
         android:gravity="center"
-        android:hint="Add Storage"
+        android:hint="@string/activity_property_hint_add_storage"
         android:drawableLeft="@drawable/ic_storage_black_24dp"/>
 
     <ImageView

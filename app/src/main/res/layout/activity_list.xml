@@ -30,7 +30,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="65dp"
                 android:background="@null"
-                android:text="Check Availability" />
+                android:text="@string/activity_list_button_checkAvailability" />
 
             <Button
                 android:id="@+id/reloadList"
@@ -40,7 +40,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="65dp"
                 android:background="@null"
-                android:text="Reload List" />
+                android:text="@string/activity_list_button_listReload" />
 
         </RelativeLayout>
 
