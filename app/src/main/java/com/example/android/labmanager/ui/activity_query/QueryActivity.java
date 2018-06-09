@@ -1,7 +1,6 @@
 package com.example.android.labmanager.ui.activity_query;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,7 +17,6 @@ import com.example.android.labmanager.App;
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.ui.activity_menu.MenuActivity;
 import com.example.android.labmanager.ui.activity_menu.MenuDrawer;
-import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
 import com.example.android.labmanager.ui.factories.IntentFactory;
 import com.squareup.picasso.Picasso;
 
@@ -86,14 +84,11 @@ public class QueryActivity extends MenuActivity implements QueryView, MenuDrawer
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        if(this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-        {
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             View contentView = inflater.inflate(R.layout.activity_query, null, false);
             drawer.addView(contentView, 0);
-        }
-        else
-        {
-            View contentView = inflater.inflate(R.layout.activity_query_vertical, null, false);
+        } else {
+            View contentView = inflater.inflate(R.layout.activity_query_horz, null, false);
             drawer.addView(contentView, 0);
         }
 

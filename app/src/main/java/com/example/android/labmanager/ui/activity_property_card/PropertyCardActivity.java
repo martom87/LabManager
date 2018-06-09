@@ -3,6 +3,7 @@ package com.example.android.labmanager.ui.activity_property_card;
 import android.content.Context;
 import android.content.Intent;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -93,8 +94,16 @@ public class PropertyCardActivity extends MenuActivity implements PropertyCardVi
     public void invokeMenuDrawer() {
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activity_compounds_card, null, false);
-        drawer.addView(contentView, 0);
+
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            View contentView = inflater.inflate(R.layout.activity_compounds_card, null, false);
+            drawer.addView(contentView, 0);
+        } else {
+            View contentView = inflater.inflate(R.layout.activity_compounds_card_horz, null, false);
+            drawer.addView(contentView, 0);
+        }
+
+
     }
 
     @Override
