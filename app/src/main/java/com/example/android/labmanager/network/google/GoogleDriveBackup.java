@@ -66,10 +66,10 @@ public class GoogleDriveBackup implements Backup, GoogleApiClient.OnConnectionFa
     @Override
     public boolean checkGoogleAvalibility(Activity activity) {
 
-         googleAPI = GoogleApiAvailability.getInstance();
+        googleAPI = GoogleApiAvailability.getInstance();
         int result = googleAPI.isGooglePlayServicesAvailable(activity);
-        if(result != ConnectionResult.SUCCESS) {
-            if(googleAPI.isUserResolvableError(result)) {
+        if (result != ConnectionResult.SUCCESS) {
+            if (googleAPI.isUserResolvableError(result)) {
                 googleAPI.getErrorDialog(activity, result,
                         PLAY_SERVICES_RESOLUTION_REQUEST).show();
             }
@@ -133,6 +133,5 @@ public class GoogleDriveBackup implements Backup, GoogleApiClient.OnConnectionFa
 
         }
     }
-
 
 }

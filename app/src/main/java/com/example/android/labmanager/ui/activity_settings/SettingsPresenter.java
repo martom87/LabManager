@@ -15,5 +15,10 @@ public class SettingsPresenter extends BackupPresenter {
         super(sharedPrefStorage, dataBaseRealm, context);
     }
 
+    @Override
+    public void disconnectClient() {
+        super.disconnectClient();
+    }
+
 
 }
