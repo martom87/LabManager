@@ -25,7 +25,8 @@ import io.realm.Realm;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    //TODO change navigation bar item labels to string resources
+    //TODO Test the app on tablet screen
     protected ActionBarDrawerToggle toggle;
     //private Realm realm;
     IntentFactory intentFactory;
@@ -89,14 +90,14 @@ public class MenuActivity extends AppCompatActivity
             intentFactory.goToActivity("compoundsListActivity");
         } else if (id == R.id.nav_query) {
             intentFactory.goToActivity("queryActivity");
-
         } else if (id == R.id.nav_queriedCompoundCard) {
             intentFactory.goToActivity("propertyCardActivity");
-
         } else if (id == R.id.nav_makeGoogleBackup) {
             askIfMakeEmptyBackup();
         } else if (id == R.id.nav_settings) {
             intentFactory.goToActivity("settingsActivity");
+        } else if (id == R.id.nav_about) {
+            intentFactory.goToActivity("help");
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

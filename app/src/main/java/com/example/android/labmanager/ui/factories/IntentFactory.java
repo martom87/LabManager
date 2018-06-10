@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.example.android.labmanager.ui.activity_backup.BackupActivity;
+import com.example.android.labmanager.ui.activity_help.HelpActivity;
 import com.example.android.labmanager.ui.activity_list.CompoundsListActivity;
 import com.example.android.labmanager.ui.activity_property_card.PropertyCardActivity;
 import com.example.android.labmanager.ui.activity_query.QueryActivity;
@@ -38,6 +39,8 @@ public class IntentFactory {
             intent = new Intent(activity, SettingsActivity.class);
         } else if (activityName.equals("restart")) {
             intent = activity.getIntent();
+        } else if (activityName.equals("help")) {
+            intent = new Intent(activity, HelpActivity.class);
         }
         activity.startActivity(intent);
         activity.finish();
