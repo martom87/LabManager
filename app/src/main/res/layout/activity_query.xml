@@ -6,21 +6,21 @@
 
     <ImageView
         android:id="@+id/imageViewFlask"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/imageViewFlask_width_medium"
+        android:layout_height="@dimen/imageViewFlask_height_medium"
+        android:layout_above="@id/typeCidNumber"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/typeCidNumber"
         android:layout_marginTop="50dp"
         android:gravity="center_vertical" />
 
     <EditText
         android:id="@+id/typeCidNumber"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/editText_typeCidNumber_width_medium"
+        android:layout_height="@dimen/editText_typeCidNumber_height_medium"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="171dp"
+        android:layout_marginBottom="@dimen/editText_typeCidNumber_marginBottom_medium"
         android:background="@drawable/edit_texts"
         android:drawableLeft="@drawable/ic_search_glass_24dp"
         android:ellipsize="start"
@@ -30,23 +30,23 @@
 
     <Button
         android:id="@+id/buttonCompoundDataDownload"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/button_buttonCompoundDataDownload_width_medium"
+        android:layout_height="@dimen/button_buttonCompoundDataDownload_height_medium"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="@dimen/button_buttonCompoundDataDownload_marginBottom_medium"
         android:background="@drawable/buttons"
         android:text="@string/activity_query_button_dataDownload" />
 
     <ProgressBar
         android:id="@+id/cmpdsDataLoader_progress_bar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/buttonCompoundDataDownload"
-        android:layout_marginTop="40dp"
+        android:layout_width="@dimen/progressBar_cmpdsDataLoader_progress_bar_width_medium"
+        android:layout_height="@dimen/progressBar_cmpdsDataLoader_progress_bar_height_medium"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/progressBar_cmpdsDataLoader_progress_bar_marginBottom_medium"
+        android:layout_marginEnd="@dimen/progressBar_cmpdsDataLoader_progress_bar_marginEnd_medium"
         android:indeterminateDrawable="@drawable/benzene_spin"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 </RelativeLayout>

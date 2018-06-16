@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewFlask"
+        android:layout_width="@dimen/imageViewFlask_width_large"
+        android:layout_height="@dimen/imageViewFlask_height_large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/typeCidNumber"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/typeCidNumber"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="171dp"
+        android:background="@drawable/edit_texts"
+        android:drawableLeft="@drawable/ic_search_glass_24dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:hint="@string/activity_query_hint_typeCid"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonCompoundDataDownload"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/buttons"
+        android:text="@string/activity_query_button_dataDownload" />
+
+    <ProgressBar
+        android:id="@+id/cmpdsDataLoader_progress_bar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/buttonCompoundDataDownload"
+        android:layout_marginTop="40dp"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/benzene_spin"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
