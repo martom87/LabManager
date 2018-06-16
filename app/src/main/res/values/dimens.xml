@@ -8,6 +8,8 @@
 
     <!-- Medium Dimensions -->
 
+    <!-- ////////////////////////////////////////////////////////////// -->
+
     <!-- Query Activity -->
 
     <!-- imageViewFlask -->
@@ -34,9 +36,30 @@
 
     <!-- Large Dimensions -->
 
+    <!-- ////////////////////////////////////////////////////////////// -->
+
     <!-- Query Activity -->
-    <dimen name="imageViewFlask_width_large">750dp</dimen>
-    <dimen name="imageViewFlask_height_large">400dp</dimen>
+
+    <!-- imageViewFlask -->
+    <dimen name="imageViewFlask_width_large">500dp</dimen>
+    <dimen name="imageViewFlask_height_large">450dp</dimen>
+    <dimen name="imageViewFlask_marginTop_large">100dp</dimen>
+
+    <!-- editText_typeCidNumber -->
+    <dimen name="editText_typeCidNumber_width_large">600dp</dimen>
+    <dimen name="editText_typeCidNumber_height_large">100dp</dimen>
+    <dimen name="editText_typeCidNumber_marginBottom_large">342dp</dimen>
+
+    <!-- button_typeCidNumber -->
+    <dimen name="button_buttonCompoundDataDownload_width_large">600dp</dimen>
+    <dimen name="button_buttonCompoundDataDownload_height_large">100dp</dimen>
+    <dimen name="button_buttonCompoundDataDownload_marginBottom_large">90dp</dimen>
+
+    <!-- progressBar_cmpdsDataLoader_progress_bar -->
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_width_large">100dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_height_large">100dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginBottom_large">218dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginEnd_large">218dp</dimen>
 
 
 </resources>
