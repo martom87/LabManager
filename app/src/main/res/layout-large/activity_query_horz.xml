@@ -25,6 +25,7 @@
         android:drawableLeft="@drawable/ic_search_glass_24dp"
         android:ellipsize="start"
         android:gravity="center"
+        android:textSize="@dimen/editText_typeCidNumber_textSize_large_horz"
         android:hint="@string/activity_query_hint_typeCid"
         android:inputType="text" />
 
@@ -36,6 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/button_buttonCompoundDataDownload_marginBottom_large_horz"
         android:background="@drawable/buttons"
+        android:textSize="@dimen/button_buttonCompoundDataDownload_textSize_large_horz"
         android:text="@string/activity_query_button_dataDownload" />
 
     <ProgressBar

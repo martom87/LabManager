@@ -22,7 +22,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/editText_typeCidNumber_marginBottom_medium_horz"
         android:background="@drawable/edit_texts"
-        android:drawableLeft="@drawable/ic_search_black_large_24dp"
+        android:drawableLeft="@drawable/ic_search_glass_24dp"
         android:ellipsize="start"
         android:gravity="center"
         android:hint="@string/activity_query_hint_typeCid"

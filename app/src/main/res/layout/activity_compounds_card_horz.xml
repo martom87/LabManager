@@ -4,81 +4,82 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginBottom="0dp"
-    android:layout_marginTop="200dp">
+    android:layout_marginBottom="@dimen/LinearLayout_medium_marginBottom_horz"
+    android:layout_marginTop="@dimen/LinearLayout_medium_marginTop_horz">
 
     <RelativeLayout
-        android:layout_width="0dp"
+        android:layout_width="@dimen/Relative_Layout_medium_width_horz"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="@dimen/Relative_Layout_medium_marginTop_horz">
 
         <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardView_medium_layout_margin_horz"
             card_view:cardBackgroundColor="#eeeeee"
-            card_view:cardCornerRadius="5dp"
-            card_view:cardElevation="5dp">
+            card_view:cardCornerRadius="@dimen/cardView_medium_cardCornerRadius_horz"
+            card_view:cardElevation="@dimen/cardView_medium_cardElevation_horz">
 
             <RelativeLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="-50dp"
-                android:padding="5dp">
+                android:layout_marginTop="@dimen/cardView_RelativeLayout_medium_marginTop"
+                android:padding="@dimen/cardView_RelativeLayout_medium_padding_horz">
 
                 <TextView
                     android:id="@+id/textViewCompoundsName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="@dimen/textViewCompoundsName_medium_layout_marginTop_horz"
                     android:maxLines="4"
-                    android:paddingTop="20dp"
+                    android:paddingTop="@dimen/textViewCompoundsName_layout_paddingTop_horz"
                     android:text="@string/activity_property_card_view_compound_name"
                     android:textColor="#307be1"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textViewCompoundsName_textSize_horz" />
 
                 <TextView
                     android:id="@+id/textViewCompoundsFormula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewCompoundsName"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/textViewCompoundsFormula_medium_layout_marginTop_horz"
                     android:text="@string/activity_property_card_view_compound_formula"
                     android:textColor="#333"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/textViewCompoundsFormula_textSize_horz" />
 
                 <TextView
                     android:id="@+id/textViewCompoundsMass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewCompoundsFormula"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/textViewCompoundsMass_medium_layout_marginTop_horz"
                     android:text="@string/activity_property_card_view_compound_mass"
                     android:textColor="#333"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/textViewCompoundsMass_textSize_horz" />
 
                 <TextView
                     android:id="@+id/textViewCompoundsCid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewCompoundsMass"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/textViewCompoundsCid_medium_layout_marginTop_horz"
                     android:text="@string/activity_property_card_view_compound_cid"
                     android:textColor="#333"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/textViewCompoundsCid_textSize_horz" />
 
                 <Button
                     android:id="@+id/saveDataToRealm"
-                    android:layout_width="100dp"
-                    android:layout_height="55dp"
+                    android:layout_width="@dimen/button_saveDataToRealm_width_medium_horz"
+                    android:layout_height="@dimen/button_saveDataToRealm_height_medium_horz"
                     android:background="@null"
                     android:layout_alignRight="@id/textViewCompoundsName"
                     android:layout_below="@id/textViewCompoundsName"
+                    android:textSize="@dimen/button_saveDataToRealm_textSize_horz"
                     android:text="@string/activity_property_button_save_override" />
 
             </RelativeLayout>
@@ -88,14 +89,14 @@
         <EditText
             android:id="@+id/typeStorePlace"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/button_typeStorePlace_height_medium_horz"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/cardView"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginBottom="@dimen/button_typeStorePlace_medium_marginBottom_horz"
+            android:layout_marginLeft="@dimen/button_typeStorePlace_medium_marginLeft_horz"
+            android:layout_marginRight="@dimen/button_typeStorePlace_height_medium_marginRight_horz"
+            android:layout_marginTop="@dimen/button_typeStorePlace_height_medium_marginTop_horz"
             android:background="@drawable/edit_texts"
             android:ellipsize="start"
             android:gravity="center"
@@ -105,19 +106,19 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="0dp"
+        android:layout_width="@dimen/imageViewRelativeLayout_width_medium_horz"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="@dimen/imageViewRelativeLayout_marginTop_medium_horz">
 
         <ImageView
             android:id="@+id/imageViewCompoundsPNG"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/imageViewCompoundsPNG_width_medium_horz"
+            android:layout_height="@dimen/imageViewCompoundsPNG_height_medium_horz"
             android:layout_centerInParent="true"
             android:layout_below="@+id/typeStorePlace"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="@dimen/imageViewCompoundsPNG_medium_marginTop_horz"
+            android:layout_marginBottom="@dimen/imageViewCompoundsPNG_medium_marginBottom_horz"
             android:gravity="center_vertical"
             app:srcCompat="@mipmap/ic_launcher_round"
             android:adjustViewBounds= "true"
