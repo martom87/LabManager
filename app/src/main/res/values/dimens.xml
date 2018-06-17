@@ -33,6 +33,87 @@
     <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginBottom_medium">109dp</dimen>
     <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginEnd_medium">109dp</dimen>
 
+    <!-- Query Activity_horz -->
+
+    <!-- imageViewFlask -->
+    <dimen name="imageViewFlask_width_medium_horz">150dp</dimen>
+    <dimen name="imageViewFlask_height_medium_horz">100dp</dimen>
+    <dimen name="imageViewFlask_marginTop_medium_horz">50dp</dimen>
+
+    <!-- editText_typeCidNumber -->
+    <dimen name="editText_typeCidNumber_width_medium_horz">300dp</dimen>
+    <dimen name="editText_typeCidNumber_height_medium_horz">50dp</dimen>
+    <dimen name="editText_typeCidNumber_marginBottom_medium_horz">100dp</dimen>
+
+    <!-- button_typeCidNumber -->
+    <dimen name="button_buttonCompoundDataDownload_width_medium_horz">300dp</dimen>
+    <dimen name="button_buttonCompoundDataDownload_height_medium_horz">50dp</dimen>
+    <dimen name="button_buttonCompoundDataDownload_marginBottom_medium_horz">10dp</dimen>
+
+    <!-- progressBar_cmpdsDataLoader_progress_bar -->
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_width_medium_horz">50dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_height_medium_horz">50dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginBottom_medium_horz">57dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginEnd_medium_horz">109dp</dimen>
+
+    <!-- Compound Card Activity -->
+
+    <!--Card View-->
+    <dimen name="cardView_medium_layout_margin">5dp</dimen>
+    <dimen name="cardView_medium_layout_marginTop">100dp</dimen>
+    <dimen name="cardView_medium_cardCornerRadius">5dp</dimen>
+    <dimen name="cardView_medium_cardElevation">5dp</dimen>
+
+    <!--Card View Relative Layout-->
+    <dimen name="cardView_RelativeLayout_medium_padding">5dp</dimen>
+
+    <!--textView_textViewCompoundsName-->
+    <dimen name="textViewCompoundsName_medium_layout_marginTop">35dp</dimen>
+    <dimen name="textViewCompoundsName_layout_paddingTop">20dp</dimen>
+    <dimen name="textViewCompoundsName_textSize">16dp</dimen>
+
+    <!--textView_textViewCompoundsFormula-->
+    <dimen name="textViewCompoundsFormula_medium_layout_marginTop">8dp</dimen>
+    <dimen name="textViewCompoundsFormula_textSize">14dp</dimen>
+
+    <!--textView_textViewCompoundsMass-->
+    <dimen name="textViewCompoundsMass_medium_layout_marginTop">8dp</dimen>
+    <dimen name="textViewCompoundsMass_textSize">14dp</dimen>
+
+    <!--textView_textViewCompoundsCid-->
+    <dimen name="textViewCompoundsCid_medium_layout_marginTop">8dp</dimen>
+    <dimen name="textViewCompoundsCid_textSize">14dp</dimen>
+
+    <!--textView_saveDataToRealm-->
+    <dimen name="button_saveDataToRealm_width_medium">100dp</dimen>
+    <dimen name="button_saveDataToRealm_height_medium">55dp</dimen>
+    <dimen name="button_saveDataToRealm_textSize">14dp</dimen>
+
+    <!--textView_typeStorePlace-->
+    <dimen name="button_typeStorePlace_height_medium">45dp</dimen>
+    <dimen name="button_typeStorePlace_height_medium_marginBottom">20dp</dimen>
+    <dimen name="button_typeStorePlace_height_medium_marginLeft">15dp</dimen>
+    <dimen name="button_typeStorePlace_height_medium_marginRight">15dp</dimen>
+    <dimen name="button_typeStorePlace_height_medium_marginTop">20dp</dimen>
+    <dimen name="button_typeStorePlace_height_medium_maxLines">8.0</dimen>
+    <dimen name="button_typeStorePlace_textSize">14dp</dimen>
+
+    <!-- imageView_imageViewCompoundsPNG -->
+    <dimen name="imageViewCompoundsPNG_width_medium">250dp</dimen>
+    <dimen name="imageViewCompoundsPNG_height_medium">250dp</dimen>
+    <dimen name="imageViewCompoundsPNG_medium_marginBottom">5dp</dimen>
+    <dimen name="imageViewCompoundsPNG_medium_marginTop">2dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Large Dimensions -->
 
@@ -60,6 +141,29 @@
     <dimen name="progressBar_cmpdsDataLoader_progress_bar_height_large">100dp</dimen>
     <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginBottom_large">218dp</dimen>
     <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginEnd_large">218dp</dimen>
+
+    <!-- Query Activity_horz -->
+
+    <!-- imageViewFlask -->
+    <dimen name="imageViewFlask_width_large_horz">300dp</dimen>
+    <dimen name="imageViewFlask_height_large_horz">200dp</dimen>
+    <dimen name="imageViewFlask_marginTop_large_horz">100dp</dimen>
+
+    <!-- editText_typeCidNumber -->
+    <dimen name="editText_typeCidNumber_width_large_horz">600dp</dimen>
+    <dimen name="editText_typeCidNumber_height_large_horz">100dp</dimen>
+    <dimen name="editText_typeCidNumber_marginBottom_large_horz">200dp</dimen>
+
+    <!-- button_typeCidNumber -->
+    <dimen name="button_buttonCompoundDataDownload_width_large_horz">600dp</dimen>
+    <dimen name="button_buttonCompoundDataDownload_height_large_horz">100dp</dimen>
+    <dimen name="button_buttonCompoundDataDownload_marginBottom_large_horz">20dp</dimen>
+
+    <!-- progressBar_cmpdsDataLoader_progress_bar -->
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_width_large_horz">100dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_height_large_horz">100dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginBottom_large_horz">114dp</dimen>
+    <dimen name="progressBar_cmpdsDataLoader_progress_bar_marginEnd_large_horz">218dp</dimen>
 
 
 </resources>
