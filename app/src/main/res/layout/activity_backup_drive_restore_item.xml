@@ -21,7 +21,7 @@
             android:id="@+id/item_history_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2:30 am, Monday, 22 December 1997"
+            android:text="9:30 am, Friday, 28 August 1987"
             android:textColor="#307be1"
             android:textStyle="bold" />
 

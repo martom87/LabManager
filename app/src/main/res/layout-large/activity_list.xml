@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/PropertiesCardView_layout_margin_large"
+        card_view:cardBackgroundColor="#eeeeee"
+        card_view:cardCornerRadius="@dimen/PropertiesCardView_cardCornerRadius_large"
+        card_view:cardElevation="@dimen/PropertiesCardView_elevetion_large">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/PropertiesCardView_RelativeLayour_padding_large">
+
+            <Button
+                android:id="@+id/checkCompoundAvailable"
+                android:layout_width="@dimen/button_checkCompoundAvailable_width_large"
+                android:layout_height="@dimen/button_checkCompoundAvailable_height_large"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/button_checkCompoundAvailable_marginRight_large"
+                android:layout_marginTop="@dimen/button_checkCompoundAvailable_marginTop_large"
+                android:background="@null"
+                android:textSize="@dimen/button_checkCompoundAvailable_textSize_large"
+                android:text="@string/activity_list_button_checkAvailability" />
+
+            <Button
+                android:id="@+id/reloadList"
+                android:layout_width="@dimen/button_reloadList_width_large"
+                android:layout_height="@dimen/button_reloadList_height_large"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/button_reloadList_marginLeft_large"
+                android:layout_marginTop="@dimen/button_reloadList_marginTop_large"
+                android:background="@null"
+                android:textSize="@dimen/button_reloadList_textSize_large"
+                android:text="@string/activity_list_button_listReload" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <EditText
+        android:id="@+id/lookForCid"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/editText_lookForCid_height_large"
+        android:layout_below="@id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/editText_marginBottom_large"
+        android:layout_marginLeft="@dimen/editText_marginLeft_large"
+        android:layout_marginRight="@dimen/editText_marginRight_large"
+        android:layout_marginTop="@dimen/editText_marginTop_large"
+        android:background="@drawable/edit_texts"
+        android:drawableLeft="@drawable/ic_search_glass_24dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:textSize="@dimen/editText_lookForCid_textSize_large"
+        android:hint="Browse CID"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/compounds_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lookForCid"
+        android:layout_marginTop="@dimen/compounds_recycler_marginTop"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>
