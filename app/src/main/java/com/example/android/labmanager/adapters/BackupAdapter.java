@@ -48,7 +48,7 @@ public class BackupAdapter extends ArrayAdapter<LabManagerBackup> {
         if (view == null) {
             LayoutInflater layoutInflater;
             layoutInflater = LayoutInflater.from(getContext());
-            view = layoutInflater.inflate(R.layout.activity_backup_drive_restore_item, parent, false);
+            view = layoutInflater.inflate(R.layout.backup_item, parent, false);
         }
 
         LabManagerBackup labManagerBackupItem = getItem(position);

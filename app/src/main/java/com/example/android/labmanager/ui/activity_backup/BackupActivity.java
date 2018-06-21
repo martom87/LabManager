@@ -149,7 +149,7 @@ public class BackupActivity extends MenuActivity implements BackupView, MenuDraw
     @Override
     public void setBackupAdapter() {
         ArrayList<LabManagerBackup> backupsArray = backupPresenter.getBackupsArray();
-        backupListView.setAdapter(new BackupAdapter(this, R.layout.activity_backup_drive_restore_item, backupsArray, backupPresenter));
+        backupListView.setAdapter(new BackupAdapter(this, R.layout.backup_item, backupsArray, backupPresenter));
     }
 
     @Override
