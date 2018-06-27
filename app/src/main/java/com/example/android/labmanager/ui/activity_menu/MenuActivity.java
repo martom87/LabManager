@@ -1,6 +1,7 @@
 package com.example.android.labmanager.ui.activity_menu;
 
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,7 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.labmanager.R;
 import com.example.android.labmanager.db.DataBaseRealm;
@@ -55,17 +58,29 @@ public class MenuActivity extends AppCompatActivity
         ButterKnife.bind(this);
         onCreateDrawer();
         intentFactory = new IntentFactory(this);
-
-
     }
 
     protected void onCreateDrawer() {
 
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        if (!((getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK) ==
+                Configuration.SCREENLAYOUT_SIZE_NORMAL)) {
+            toggle.setDrawerIndicatorEnabled(false);
+            toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            });
+
+            toggle.setHomeAsUpIndicator(R.drawable.baseline_dehaze_white_36dp);
+
+        }
+
         drawer.addDrawerListener(toggle);
-
-
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
